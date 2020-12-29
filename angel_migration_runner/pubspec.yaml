@@ -10,4 +10,10 @@ dependencies:
   angel_orm: ^2.0.0-dev.2
   args: ^1.0.0
   charcode: ^1.0.0
-  postgres: ">=0.9.5 <2.0.0"
+  postgres: ^2.1.1
+  mysql1: ^0.17.1
+dependency_overrides:
+  angel_migration:
+    path: "../angel_migration"
+  angel_orm:
+    path: "../angel_orm"

@@ -12,7 +12,7 @@ class UserMigration implements Migration {
       table
         ..serial('id').primaryKey()
         ..varChar('username', length: 32).unique()
-        ..varChar('password')
+        ..varChar('password',length: 32)
         ..boolean('account_confirmed').defaultsTo(false);
     });
   }
@@ -30,8 +30,10 @@ class TodoMigration implements Migration {
       table
         ..serial('id').primaryKey()
         ..integer('user_id').references('users', 'id').onDeleteCascade()
-        ..varChar('text')
-        ..boolean('completed').defaultsTo(false);
+        ..varChar('text',length: 255)
+        ..boolean('is_complete').defaultsTo(false)
+        ..date('created_at')
+        ..date('updated_at');
     });
   }
 

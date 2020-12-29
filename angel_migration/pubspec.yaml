@@ -7,3 +7,6 @@ environment:
   sdk: ">=2.0.0-dev <3.0.0"
 dependencies:
   angel_orm: ^2.0.0-dev
+dependency_overrides:
+  angel_orm:
+    path: "../angel_orm"

@@ -13,8 +13,17 @@ main() async {
     ..level = Level.ALL
     ..onRecord.listen(print);
 
+  // var settings = ConnectionSettings(
+  //     db: 'angel_orm_test', user: 'angel_orm_test', password: 'angel_orm_test');
+  // var connection = await MySqlConnection.connect(settings);
+
   var settings = ConnectionSettings(
-      db: 'angel_orm_test', user: 'angel_orm_test', password: 'angel_orm_test');
+    user: "root",
+    password: "1234",
+    host: "localhost",
+    port: 3306,
+    db: "testdb",
+  );
   var connection = await MySqlConnection.connect(settings);
   var logger = Logger('angel_orm_mysql');
   var executor = MySqlExecutor(connection, logger: logger);
@@ -22,7 +31,7 @@ main() async {
   var query = TodoQuery();
   query.values
     ..text = 'Clean your room!'
-    ..isComplete = false;
+    ..is_complete = false;
 
   var todo = await query.insert(executor);
   print(todo.toJson());
@@ -39,5 +48,5 @@ abstract class _Todo extends Model {
   String get text;
 
   @DefaultsTo(false)
-  bool isComplete;
+  bool is_complete;
 }

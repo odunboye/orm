@@ -1,13 +1,18 @@
 import 'package:angel_migration/angel_migration.dart';
 import 'package:angel_migration_runner/angel_migration_runner.dart';
-import 'package:angel_migration_runner/postgres.dart';
+import 'package:angel_migration_runner/mysql.dart';
 import 'package:angel_orm/angel_orm.dart';
-import 'package:postgres/postgres.dart';
+import 'package:mysql1/mysql1.dart';
 import '../../angel_migration/example/todo.dart';
 
-var migrationRunner = new PostgresMigrationRunner(
-  new PostgreSQLConnection('127.0.0.1', 5432, 'test',
-      username: 'postgres', password: 'postgres'),
+var migrationRunner = MySqlMigrationRunner(
+  ConnectionSettings(
+    host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: '1234',
+    db: 'testdb',
+  ),
   migrations: [
     new UserMigration(),
     new TodoMigration(),

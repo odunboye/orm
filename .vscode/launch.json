@@ -1,0 +1,71 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "mysql migration",
+            "type": "dart",
+            "request": "launch",
+            "program": "angel_migration_runner/example/main_mysql.dart",
+            "args": [
+                "up"
+            ]
+        },
+        {
+            "name": "angel_migration",
+            "cwd": "angel_migration",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "angel_migration_runner",
+            "cwd": "angel_migration_runner",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "angel_orm",
+            "cwd": "angel_orm",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "angel_orm_generator",
+            "cwd": "angel_orm_generator",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "angel_orm_mysql",
+            "cwd": "angel_orm_mysql",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "angel_orm_postgres",
+            "cwd": "angel_orm_postgres",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "angel_orm_service",
+            "cwd": "angel_orm_service",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "angel_orm_sqlite",
+            "cwd": "angel_orm_sqlite",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "angel_orm_test",
+            "cwd": "angel_orm_test",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}

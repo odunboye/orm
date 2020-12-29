@@ -1,0 +1,1 @@
+DELETE annual_rent;
